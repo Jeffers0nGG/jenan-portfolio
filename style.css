@@ -235,7 +235,9 @@ a {
    ======================================== */
 
 .hero {
+    height: 100vh;
     min-height: 100vh;
+    max-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -406,6 +408,8 @@ a {
 
 .about {
     background-color: var(--background);
+    position: relative;
+    z-index: 2;
 }
 
 .about-content {
