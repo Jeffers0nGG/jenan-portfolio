@@ -46,8 +46,9 @@ function initSmoothScrolling() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetSection.offsetTop - navbarHeight;
+                // Add extra offset to ensure hero section is completely hidden
+                const extraOffset = 50; // Additional pixels to scroll past the section start
+                const targetPosition = targetSection.offsetTop + extraOffset;
                 
                 window.scrollTo({
                     top: targetPosition,

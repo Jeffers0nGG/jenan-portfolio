@@ -11,9 +11,11 @@
     justify-content: center;
     padding-top: 80px;
     padding-bottom: 80px;
-    background-color: var(--background);
+    background-color: #ffffff;
     position: relative;
-    z-index: 2;
+    z-index: 10;
+    margin-top: 0;
+    border-top: none;
 }
 
 /* Ensure container doesn't overflow */
@@ -247,6 +249,11 @@
 /* Ensure smooth scrolling transitions - non-forced */
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 0;
+}
+
+section {
+    position: relative;
 }
 
 /* Prevent content overflow on About section */
@@ -283,6 +290,9 @@ html {
 /* Ensure Projects section starts at the right position */
 .projects {
     margin-top: 0;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 5;
 }
 
 /* Fine-tune for very tall screens */
