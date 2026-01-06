@@ -190,12 +190,13 @@ function initActiveNavigation() {
 
 /**
  * Handle contact form submission
- * Validates form data and displays success/error messages
- * Note: This is a frontend-only implementation
+ * Validates form data and sends email using EmailJS
+ * Emails will be sent to: aciojenan@gmail.com and qjjaacio@tip.edu.ph
  */
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
+    const submitButton = contactForm.querySelector('button[type="submit"]');
     
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -216,22 +217,48 @@ function initContactForm() {
             return;
         }
         
-        // Simulate form submission (no backend)
-        // In production, this would send data to a server
-        setTimeout(() => {
-            showFormMessage(
-                `Thank you, ${name}! Your message has been received. I'll get back to you soon at ${email}.`,
-                'success'
-            );
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                hideFormMessage();
-            }, 5000);
-        }, 500);
+        // Disable submit button and show loading state
+        const originalButtonText = submitButton.innerHTML;
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        
+        // Send email using EmailJS
+        // Template parameters
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            message: message,
+            to_email: 'aciojenan@gmail.com, qjjaacio@tip.edu.ph'
+        };
+        
+        // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_PUBLIC_KEY' with your EmailJS credentials
+        emailjs.send('service_qdx72pr', 'template_h3i8gyo', templateParams, 'Y0c3-BIlgy3SA6PeR')
+            .then(function(response) {
+                console.log('Email sent successfully!', response.status, response.text);
+                showFormMessage(
+                    `Thank you, ${name}! Your message has been sent successfully. I'll get back to you soon at ${email}.`,
+                    'success'
+                );
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Hide message after 7 seconds
+                setTimeout(() => {
+                    hideFormMessage();
+                }, 7000);
+            }, function(error) {
+                console.error('Failed to send email:', error);
+                showFormMessage(
+                    'Sorry, there was an error sending your message. Please try again or email me directly at aciojenan@gmail.com',
+                    'error'
+                );
+            })
+            .finally(function() {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            });
     });
 }
 
