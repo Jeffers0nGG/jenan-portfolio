@@ -1,0 +1,314 @@
+/* ========================================
+   VIEWPORT-SPECIFIC ADJUSTMENTS
+   Perfect section alignment for all devices
+   ======================================== */
+
+/* Make About section fill the viewport perfectly */
+.about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Ensure container doesn't overflow */
+.about .container {
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Adjust section padding to ensure perfect viewport fit */
+.about.section {
+    padding: 4rem 0;
+}
+
+/* Main content wrapper for side-by-side layout */
+.about-main-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 3rem;
+    align-items: start;
+    width: 100%;
+}
+
+/* Keep tech stack visible within viewport - no scrolling */
+.tech-stack-section {
+    margin-top: 0;
+}
+
+/* Responsive adjustments for different screen sizes */
+
+/* Large Desktop (1400px and above) */
+@media (min-width: 1400px) {
+    .about {
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+/* Standard Desktop (1024px - 1399px) */
+@media (min-width: 1024px) and (max-width: 1399px) {
+    .about {
+        min-height: 100vh;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    
+    .about-content {
+        gap: 2rem;
+    }
+}
+
+/* Tablet Landscape (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .about {
+        min-height: auto;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    
+    .about.section {
+        padding: 3rem 0;
+    }
+    
+    .about-main-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        max-height: none;
+    }
+    
+    .tech-stack-section {
+        max-height: none;
+        overflow-y: visible;
+    }
+    
+    .about-content {
+        max-height: none;
+        overflow-y: visible;
+    }
+    
+    .profile-photo {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* Tablet Portrait (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .about {
+        min-height: auto;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
+    .about.section {
+        padding: 2.5rem 0;
+    }
+    
+    .about-main-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        max-height: none;
+    }
+    
+    .tech-stack-section {
+        max-height: none;
+        overflow-y: visible;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+        max-height: none;
+        overflow-y: visible;
+    }
+    
+    .profile-photo {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .career-objective {
+        padding: 1.25rem;
+    }
+}
+
+/* Mobile (320px - 480px) */
+@media (max-width: 480px) {
+    .about {
+        min-height: 100vh;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        overflow-y: auto;
+    }
+    
+    .about.section {
+        padding: 2rem 0;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .about-text h3 {
+        font-size: 1.5rem;
+    }
+    
+    .career-objective {
+        padding: 1rem;
+    }
+    
+    .career-objective h4 {
+        font-size: 1.1rem;
+    }
+    
+    .career-objective p {
+        font-size: 0.95rem;
+    }
+    
+    .highlight-item {
+        font-size: 0.95rem;
+    }
+}
+
+/* Extra small mobile (below 320px) */
+@media (max-width: 319px) {
+    .about {
+        min-height: 100vh;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    .about.section {
+        padding: 1.5rem 0;
+    }
+    
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Landscape orientation adjustments for mobile devices */
+@media (max-height: 600px) and (orientation: landscape) {
+    .about {
+        min-height: auto;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
+    .about.section {
+        padding: 2rem 0;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Ensure smooth scrolling transitions - non-forced */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Prevent content overflow on About section */
+.about .container {
+    overflow: visible;
+}
+
+/* Ensure about content fits within viewport on desktop */
+@media (min-width: 1024px) {
+    .about-content {
+        max-height: calc(100vh - 250px);
+        overflow-y: auto;
+        padding-right: 0.5rem;
+    }
+    
+    .about-content::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .about-content::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    .about-content::-webkit-scrollbar-thumb {
+        background: rgba(37, 99, 235, 0.3);
+        border-radius: 10px;
+    }
+    
+    .about-content::-webkit-scrollbar-thumb:hover {
+        background: rgba(37, 99, 235, 0.5);
+    }
+}
+
+/* Ensure Projects section starts at the right position */
+.projects {
+    margin-top: 0;
+}
+
+/* Fine-tune for very tall screens */
+@media (min-height: 1000px) {
+    .about {
+        min-height: 100vh;
+        justify-content: center;
+    }
+    
+    .about-content {
+        max-height: none;
+    }
+}
+
+/* Fine-tune for very short screens */
+@media (max-height: 700px) {
+    .about {
+        min-height: 100vh;
+    }
+    
+    .about.section {
+        padding: 2rem 0;
+    }
+    
+    .section-title {
+        margin-bottom: 1.5rem;
+    }
+    
+    .about-content {
+        gap: 1.5rem;
+    }
+}

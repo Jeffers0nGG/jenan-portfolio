@@ -64,15 +64,21 @@ function initSmoothScrolling() {
 
 /**
  * Add/remove shadow effect on navbar when scrolling
- * Adds 'scrolled' class to navbar when user scrolls down
+ * Shows navbar after scrolling past hero section
  */
 function initStickyNavbar() {
     const navbar = document.getElementById('navbar');
+    const heroSection = document.getElementById('home');
     
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
+        const heroHeight = heroSection.offsetHeight;
+        
+        // Show navbar after scrolling past hero section
+        if (window.scrollY > heroHeight - 100) {
+            navbar.classList.add('visible');
             navbar.classList.add('scrolled');
         } else {
+            navbar.classList.remove('visible');
             navbar.classList.remove('scrolled');
         }
     });
@@ -359,85 +365,7 @@ function initTypingEffect() {
     setTimeout(typeChar, 1200);
 }
 
-// ========================================
-// SCROLL TO TOP BUTTON (Optional)
-// ========================================
 
-/**
- * Create and initialize scroll to top button
- * Appears when user scrolls down and scrolls page to top when clicked
- */
-function initScrollToTop() {
-    // Create button element
-    const scrollBtn = document.createElement('button');
-    scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    scrollBtn.className = 'scroll-to-top';
-    scrollBtn.setAttribute('aria-label', 'Scroll to top');
-    document.body.appendChild(scrollBtn);
-    
-    // Add styles programmatically
-    const style = document.createElement('style');
-    style.textContent = `
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            box-shadow: var(--shadow-lg);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-        }
-        
-        .scroll-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .scroll-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        @media (max-width: 768px) {
-            .scroll-to-top {
-                width: 45px;
-                height: 45px;
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Show/hide button based on scroll position
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            scrollBtn.classList.add('visible');
-        } else {
-            scrollBtn.classList.remove('visible');
-        }
-    });
-    
-    // Scroll to top on click
-    scrollBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
 
 // ========================================
 // PERFORMANCE: LAZY LOADING IMAGES
@@ -598,7 +526,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initProjectCardEffects();
     
     // Optional features
-    initScrollToTop();
     // initTypingEffect(); // Uncomment to enable typing effect
     // initPreloader(); // Uncomment to enable preloader
     

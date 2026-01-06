@@ -1,0 +1,278 @@
+/* ========================================
+   TECH STACK SECTION - About Me Enhancement
+   ======================================== */
+
+.tech-stack-section {
+    padding: 1rem 0;
+}
+
+.tech-stack-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.tech-stack-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2.5px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    padding: 0.25rem 0;
+}
+
+.tech-card {
+    background: var(--background-card);
+    border-radius: 10px;
+    padding: 0.9rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.03) 0%, 
+        rgba(139, 92, 246, 0.03) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover::before {
+    opacity: 1;
+}
+
+.tech-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 12px 24px rgba(37, 99, 235, 0.15),
+        0 0 20px rgba(139, 92, 246, 0.1);
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.tech-logo-container {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: linear-gradient(135deg, 
+        rgba(249, 250, 251, 0.5) 0%, 
+        rgba(255, 255, 255, 0.3) 100%);
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.tech-card:hover .tech-logo-container {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.8) 0%, 
+        rgba(249, 250, 251, 0.6) 100%);
+}
+
+.tech-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: filter 0.3s ease;
+}
+
+.tech-card:hover .tech-logo {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.tech-name {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-align: center;
+    letter-spacing: 0.2px;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+    line-height: 1.2;
+}
+
+.tech-card:hover .tech-name {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1023px) {
+    .tech-stack-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+    }
+    
+    .tech-card {
+        padding: 1.25rem 0.75rem;
+    }
+    
+    .tech-logo-container {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .tech-name {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-stack-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1.25rem;
+    }
+    
+    .tech-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .tech-logo-container {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .tech-name {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-stack-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .tech-card {
+        padding: 1.25rem 0.75rem;
+    }
+    
+    .tech-logo-container {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .tech-stack-title {
+        font-size: 1.25rem;
+    }
+}
+
+/* Dark theme specific enhancements (if body has dark class) */
+@media (prefers-color-scheme: dark) {
+    .tech-card {
+        background: linear-gradient(135deg, 
+            rgba(30, 41, 59, 0.4) 0%, 
+            rgba(15, 23, 42, 0.4) 100%);
+        border-color: rgba(100, 116, 139, 0.2);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .tech-card:hover {
+        box-shadow: 
+            0 12px 24px rgba(37, 99, 235, 0.25),
+            0 0 30px rgba(139, 92, 246, 0.2);
+        border-color: rgba(139, 92, 246, 0.4);
+    }
+    
+    .tech-logo-container {
+        background: linear-gradient(135deg, 
+            rgba(51, 65, 85, 0.6) 0%, 
+            rgba(30, 41, 59, 0.4) 100%);
+    }
+    
+    .tech-card:hover .tech-logo-container {
+        background: linear-gradient(135deg, 
+            rgba(71, 85, 105, 0.8) 0%, 
+            rgba(51, 65, 85, 0.6) 100%);
+    }
+    
+    .tech-name {
+        color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .tech-card:hover .tech-name {
+        color: #60a5fa;
+    }
+}
+
+/* Animation for cards on scroll */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tech-card {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.tech-card:nth-child(1) { animation-delay: 0.1s; }
+.tech-card:nth-child(2) { animation-delay: 0.15s; }
+.tech-card:nth-child(3) { animation-delay: 0.2s; }
+.tech-card:nth-child(4) { animation-delay: 0.25s; }
+.tech-card:nth-child(5) { animation-delay: 0.3s; }
+.tech-card:nth-child(6) { animation-delay: 0.35s; }
+.tech-card:nth-child(7) { animation-delay: 0.4s; }
+.tech-card:nth-child(8) { animation-delay: 0.45s; }
+.tech-card:nth-child(9) { animation-delay: 0.5s; }
+
+/* Subtle glow effect on hover for premium feel */
+.tech-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, 
+        rgba(139, 92, 246, 0.15) 0%, 
+        transparent 70%);
+    opacity: 0;
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+
+.tech-card:hover::after {
+    width: 200%;
+    height: 200%;
+    opacity: 1;
+}

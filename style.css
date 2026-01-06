@@ -144,7 +144,16 @@ a {
     background-color: var(--background);
     box-shadow: var(--shadow-md);
     z-index: 1000;
-    transition: var(--transition-normal);
+    transition: all 0.3s ease;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.navbar.visible {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
 }
 
 .navbar.scrolled {

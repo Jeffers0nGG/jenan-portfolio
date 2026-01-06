@@ -9,6 +9,8 @@
     
     <!-- Link to external CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="viewport-adjustments.css">
+    <link rel="stylesheet" href="tech-stack.css">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,22 +51,14 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-name fade-in">Jenan Jefferson Acio</h1>
-                <h2 class="hero-title fade-in-delay-1">BS Computer Science Student</h2>
+                <h1 class="hero-name fade-in">Hello, I'm Jenan Acio.</h1>
+                <h2 class="hero-title fade-in-delay-1">I'm a 4th Year Computer Science student with a background in Data Science, aspiring to become a web or software developer.</h2>
                 <p class="hero-subtitle fade-in-delay-2">
                     <i class="fas fa-university"></i> Technological Institute of the Philippines – Quezon City
                 </p>
                 <p class="hero-location fade-in-delay-3">
                     <i class="fas fa-map-marker-alt"></i> Antipolo City, Rizal, Philippines
                 </p>
-                <div class="hero-buttons fade-in-delay-4">
-                    <a href="#projects" class="btn btn-primary">
-                        <i class="fas fa-folder-open"></i> View Projects
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <i class="fas fa-envelope"></i> Contact Me
-                    </a>
-                </div>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -78,40 +72,103 @@
     <section id="about" class="about section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="assets/2x2acio.png" alt="Jenan Jefferson Acio" class="profile-photo">
-                </div>
-                <div class="about-text">
-                    <h3>BS Computer Science Student</h3>
-                    <p class="university">
-                        <i class="fas fa-graduation-cap"></i> 
-                        Technological Institute of the Philippines – Quezon City
-                    </p>
-                    <div class="career-objective">
-                        <h4>Career Objective</h4>
-                        <p>
-                            To contribute to an organization's goals through dedication and responsibility, 
-                            while developing my skills and potential as a Computer Science student. I aim to 
-                            gain valuable practical experience that will enhance my knowledge and prepare me 
-                            for a successful career.
+            <div class="about-main-wrapper">
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="assets/2x2acio.png" alt="Jenan Jefferson Acio" class="profile-photo">
+                    </div>
+                    <div class="about-text">
+                        <h3>BS Computer Science Student</h3>
+                        <p class="university">
+                            <i class="fas fa-graduation-cap"></i> 
+                            Technological Institute of the Philippines – Quezon City
                         </p>
-                    </div>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Motivated & Dedicated</span>
+                        <div class="career-objective">
+                            <h4>Career Objective</h4>
+                            <p>
+                                To contribute to an organization's goals through dedication and responsibility, 
+                                while developing my skills and potential as a Computer Science student. I aim to 
+                                gain valuable practical experience that will enhance my knowledge and prepare me 
+                                for a successful career.
+                            </p>
                         </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Seeking Practical Experience</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Continuous Learner</span>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Motivated & Dedicated</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Seeking Practical Experience</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Continuous Learner</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Tech Stack Section -->
+                <div class="tech-stack-section">
+                <h3 class="tech-stack-title">Tech Stack</h3>
+                <div class="tech-stack-grid">
+                    <div class="tech-card">
+                        <div class="tech-logo-container">
+                            <img src="assets/Logo/android studio logo.png" alt="Android Studio" class="tech-logo">
+                        </div>
+                        <span class="tech-name">Android Studio</span>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-logo-container">
+                            <img src="assets/Logo/css logo.png" alt="CSS" class="tech-logo">
+                        </div>
+                        <span class="tech-name">CSS</span>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-logo-container">
+                            <img src="assets/Logo/dart logo.png" alt="Dart" class="tech-logo">
+                        </div>
+                        <span class="tech-name">Dart</span>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-logo-container">
+                            <img src="assets/Logo/flutter logo.png" alt="Flutter" class="tech-logo">
+                        </div>
+                        <span class="tech-name">Flutter</span>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-logo-container">
+                            <img src="assets/Logo/html logo.png" alt="HTML" class="tech-logo">
+                        </div>
+                        <span class="tech-name">HTML</span>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-logo-container">
+                            <img src="assets/Logo/java logo.png" alt="Java" class="tech-logo">
+                        </div>
+                        <span class="tech-name">Java</span>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-logo-container">
+                            <img src="assets/Logo/js logo.png" alt="JavaScript" class="tech-logo">
+                        </div>
+                        <span class="tech-name">JavaScript</span>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-logo-container">
+                            <img src="assets/Logo/jupyter logo.png" alt="Jupyter" class="tech-logo">
+                        </div>
+                        <span class="tech-name">Jupyter</span>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-logo-container">
+                            <img src="assets/Logo/python logo.png" alt="Python" class="tech-logo">
+                        </div>
+                        <span class="tech-name">Python</span>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -495,6 +552,9 @@
 
     <!-- Link to external JavaScript -->
     <script src="script.js"></script>
+    
+    <!-- Hero Section Particle Animation -->
+    <script src="hero-animations.js"></script>
 
 </body>
 </html>
